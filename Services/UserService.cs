@@ -41,7 +41,7 @@ public class UserService
         return user != null;
     }
 
-    public async Task<Users?> FindUserAsync(string email, string password)=>
+    public async Task<Users> FindUserAsync(string email, string password)=>
         await _usersCollection.Find(x => (x.Email == email) && (x.Password == password)).FirstOrDefaultAsync();
     
 }
